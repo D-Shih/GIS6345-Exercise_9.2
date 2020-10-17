@@ -1,0 +1,34 @@
+# Exercise 9-2
+# Created in Juypter Notebook, modified to improve display of output
+
+
+def has_no_e(word):
+    for letter in word:
+        if letter == 'e':
+            return False
+    return True
+
+print("Does the word 'banana' have a letter 'e' in it?")
+print(str(has_no_e('banana')))
+
+print("Does the word 'orange' have a letter 'e' in it?")
+print(str(has_no_e('orange')))
+
+# commented out as it takes too long to print out
+#print("Print words from words.txt which do not contain the letter 'e':")
+#count_line = 0
+#count_no_e = 0
+#fin = open('words.txt')
+#for line in fin:
+#    count_line = count_line + 1
+#    if has_no_e(line):
+#        print(line)
+
+count_line = 0
+count_no_e = 0
+fin = open('words.txt')
+for line in fin:
+    count_line = count_line + 1
+    if has_no_e(line):
+        count_no_e = count_no_e + 1
+print("Percentage of words in words.txt that have no 'e': " + str(int(count_no_e/count_line*100))+ "%")
